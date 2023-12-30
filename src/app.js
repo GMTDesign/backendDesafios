@@ -31,10 +31,11 @@ app.use('/', webRouter)
 app.use('/api', apiRouter)
 
 serverSocket.on('connection', async (socket) => {
+    
     socket.on('newProduct', async (id) => {
         console.log(id)
-        //SOLUCIONAR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      //await cartManager.create({ products: [{product: id}] })
+        cartManager.create({products: [{product: id}]})
+      
     })
     // chat sockets
     serverSocket.emit('messages', await messageManager.find())

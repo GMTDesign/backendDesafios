@@ -11,7 +11,7 @@ export async function getByIdController(req, res) {
 
 export async function postController(req, res) {
     try {
-        const newCart = await cartManager.create({ products: [] })
+        const newCart = await cartManager.create({products: []})
         res.json(newCart.toObject())
     } catch (error) {
         res.status(400).json({ message: error.message })

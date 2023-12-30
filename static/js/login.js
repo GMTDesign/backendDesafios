@@ -2,7 +2,6 @@ const loginForm = document.querySelector('form')
 
 loginForm.addEventListener('submit', async ev => {
     ev.preventDefault()
-
     const response = await fetch('/api/sessions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
